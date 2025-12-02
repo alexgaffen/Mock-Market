@@ -1,0 +1,11 @@
+# Ignore environment variable files
+.env
+
+# Node modules (for Node.js projects)
+node_modules/
+
+# Build directories
+build/
+dist/
+
+*.hpp

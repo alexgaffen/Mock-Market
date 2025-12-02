@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   cpp-algos:
     build: ./cpp-algos
@@ -10,7 +9,12 @@ services:
   backend:
     build: ./backend
     ports:
-      - "3000:3000"
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      # This passes the API key from your computer to the container.
+      # Ensure you have a .env file in this folder or the backend folder.
+      - FINNHUB_API_KEY=${FINNHUB_API_KEY}
     depends_on:
       - cpp-algos
     networks:
@@ -23,22 +27,5 @@ services:
     networks:
       - investor-net
 
-  # Optionally, add a database service if needed later
-  # database:
-  #   image: postgres:13
-  #   environment:
-  #     POSTGRES_USER: youruser
-  #     POSTGRES_PASSWORD: yourpassword
-  #     POSTGRES_DB: investordb
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - pgdata:/var/lib/postgresql/data
-  #   networks:
-  #     - investor-net
-
 networks:
   investor-net:
-
-# volumes:
-#   pgdata:
