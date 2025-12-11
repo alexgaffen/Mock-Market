@@ -28,6 +28,8 @@ Mock Market is a trading simulation application that bridges the gap between tra
 - **Microservices Architecture**
   Fully containerized using Docker and Docker Compose.
 
+![](./assets/mock-market-analyze.jpg)
+
 ## 🛠 Architecture Overview
 
 The application is split into three distinct services communicating via HTTP and TCP sockets:
